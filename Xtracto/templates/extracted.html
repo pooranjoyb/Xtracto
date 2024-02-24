@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extracted Text</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-100 font-sans">
+    <div class="flex flex-col min-h-screen items-center justify-center">
+        <div class='text-4xl mt-12 text-blue-600 font-bold mb-3'>
+            Extracted Text
+        </div>
+        <div class='text-sm font-bold mb-10'>Here is the extracted text </div>
+        <div class="w-full max-w-lg bg-white p-6 rounded-xl border-2 border-blue-400 text-center">
+            <p id="extracted-text" class="text-gray-500 tracking-wide"></p>
+        </div>
+    </div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const extractedText = document.getElementById('extracted-text');
+        const params = new URLSearchParams(window.location.search);
+        const text = params.get('text');
+        extractedText.innerText = text;
+    });
+</script>
+</html>
